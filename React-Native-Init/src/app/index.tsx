@@ -43,6 +43,12 @@ export default function Homescreen() {
         style={({ pressed }) => ({
           backgroundColor: pressed ? "#0e4e0f" : "#6c63ff",
         })}
+        hitSlop={{
+          top:10,
+          bottom:10,
+          left:20,
+          right:20,
+        }}
       >
         {({ pressed }) =>
           pressed ? <Text>Pressing...</Text> : <Text>Press me</Text>
