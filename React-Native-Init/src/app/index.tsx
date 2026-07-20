@@ -1,10 +1,46 @@
-import { View, Text, Image } from "react-native";
+import { useState } from "react";
+import { View, Text, Image,TextInput } from "react-native";
 
 export default function Homescreen() {
+  const [name, setName] = useState("")
   return (
     <View>
       {" "}
-      <Text numberOfLines={5}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, aliquid ad. Maxime a blanditiis quas quos id, rem ratione at unde dolor minima quidem enim ipsa, sunt adipisci quisquam impedit vero nostrum dolorum omnis quis voluptatibus quaerat culpa iure? Temporibus repellendus a eaque velit, laudantium voluptate sit perspiciatis dolorells laboriosam.</Text>{" "}
+      <Text numberOfLines={5}>
+         laudantium voluptate sit perspiciatis
+        dolorells laboriosam.
+      </Text>{" "}
+      {/* remote image*/}
+      <Image
+        source={{
+          uri: "https://images.pexels.com/photos/37880025/pexels-photo-37880025.jpeg",
+        }}
+        width={200}
+        height={200}
+      />
+      {/* local image*/}
+      <Image
+        source={require("@/assets/images/icon.png")}
+        style={{
+          height: 50,
+          width: 50,
+        }}
+        blurRadius={50}
+      />
+
+      <TextInput 
+      placeholder="enter your name" 
+      value={name} 
+      onChangeText={setName}
+      placeholderTextColor={"red"}
+      style={{
+        borderWidth:1,
+        borderColor:"#ddd",
+        marginTop:10,
+        fontSize:24,
+      }}
+      
+      />
     </View>
   );
 }
